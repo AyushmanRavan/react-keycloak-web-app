@@ -1,0 +1,8 @@
+{
+  "realm": "ineat-realm",
+  "auth-server-url": "http://localhost:8080/auth/",
+  "ssl-required": "external",
+  "resource": "ineat-web",
+  "public-client": true,
+  "confidential-port": 0
+} 
