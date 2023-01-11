@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react';
-import Instance from '../services/http-api'
+import apiService from '../services/http-api'
 
 
 function ApiCalls(props) {
@@ -18,8 +18,7 @@ function ApiCalls(props) {
       };
 
     useEffect(() => {
-        Instance.get(value).then((response) => {
-            console.log(response)
+      apiService.getRequest(value).then((response) => {
           setPost(response.data);
         });
       }, [value]);
@@ -34,7 +33,7 @@ function ApiCalls(props) {
                 <option value="/all-user-v1">BOTH</option>
                 <option value="/user-v1">USER</option> */}
                 {
-                        options.map((option) => ( <option value={option.value} key={option.value}>{option.label}</option> ))
+                  options.map((option) => ( <option value={option.value} key={option.value}>{option.label}</option> ))
                 }
                 </select>
              </label>

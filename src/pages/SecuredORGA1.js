@@ -8,7 +8,7 @@ import ApiCalls from './ApiCalls'
 // https://www.keycloak.org/docs/latest/server_admin/index.html#webauthn_server_administration_guide
 // https://www.ideas2it.com/blogs/a-deep-dive-into-asynchronous-programming-in-java-8/
 // https://arnoldgalovics.com/
-class Secured extends Component {
+class SecuredORGA1 extends Component {
 
   constructor(props) {
     super(props);
@@ -16,7 +16,8 @@ class Secured extends Component {
   }
 
   componentDidMount() {
-    const keycloak = new Keycloak('/ORGA2-keycloak.json'); //ORGA2-keycloak.json  //
+    const keycloak = new Keycloak('/ORGA1-keycloak.json'); //ORGA2-keycloak.json  //
+    localStorage.setItem('Realm', "ORGA1")
     // var initSetting = { 
     //   onLoad: 'login-required',
     // }
@@ -55,7 +56,7 @@ class Secured extends Component {
   }
 }
 
-export default Secured;
+export default SecuredORGA1;
 
 
 

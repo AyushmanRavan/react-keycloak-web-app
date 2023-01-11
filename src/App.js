@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
-import Welcome from './pages/Welcome';
-import Secured from './pages/Secured';
-import CreateUpdateUser from './user-crud/CreateUpdateUser'
-import UserList from './user-crud/UserList'
+import { BrowserRouter, Link } from 'react-router-dom';
+import AppRoutes from "./AppRoutes"
 import './App.css';
-// import AddUpdate from './curd/AddUpdate'
-import Callback from './pages/Callback'
 
 class App extends Component {
 
@@ -16,17 +11,15 @@ class App extends Component {
         <div className="container">
           <ul>
             <li><Link to="/">public component</Link></li>
-            <li><Link to="/secured">secured component</Link></li>
-            {/* <li><Link to="/callback">callback url</Link></li> */}
-            <li><Link to="/users">Manage Users</Link></li>
+            <li><Link to="/admin">Admin</Link></li>
+            <li><Link to="/user">User</Link></li>
+            <li><Link to="/all-user">AllUser</Link></li>
+            <li><Link to="/unsecured">Unsecured</Link></li>
+            <li><Link to="/securedORGA1">ORGA1</Link></li>
+            <li><Link to="/securedORGA2">ORGA2</Link></li>
+            <li><Link to="/users-list">Manage Users</Link></li>
           </ul>
-          <Routes>
-            <Route exact path="/" element={<Welcome/>} />
-            <Route path="/secured" element={<Secured/>} />
-            {/* <Route path="/callback" element={<Callback/>} /> */}
-            <Route path='/users' element={<UserList/>}/>
-            <Route path='/users/:id' element={<CreateUpdateUser/>}/>
-          </Routes>
+         <AppRoutes/>
         </div>
         {/* <AddUpdate/> */}
       </BrowserRouter>
